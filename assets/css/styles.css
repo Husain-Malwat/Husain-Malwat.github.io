@@ -305,11 +305,15 @@ img {
 .skills__img {
   border-radius: 0.5rem;
 }
-
+Projects__container{
+  row-gap: 2rem;
+  column-gap: 2rem;
+}
 /* ===== WORK =====*/
 .work__container {
   row-gap: 2rem;
 }
+
 .work__img {
   box-shadow: 0px 4px 25px rgba(14, 36, 49, 0.15);
   border-radius: 0.5rem;
@@ -408,6 +412,12 @@ img {
     column-gap: 2rem;
     padding-top: 2rem;
   }
+  .Projects__container {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 2rem;
+    column-gap: 2rem;
+    padding-top: 2rem;
+  }
   .contact__form {
     width: 360px;
     padding-top: 2rem;
@@ -471,6 +481,11 @@ img {
     grid-template-columns: repeat(3, 1fr);
     column-gap: 2rem;
   }
+  .Projects__container{
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 2rem;
+    column-gap: 2rem;
+  }
 }
 @media screen and (min-width: 992px) {
   .bd-grid {
@@ -484,3 +499,87 @@ img {
     width: 450px;
   }
 }
+
+.colo-white{
+  color: white;
+}
+.flip-box{
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  cursor: pointer;
+}
+.flip-box-front,
+.flip-box-back{
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  min-height: 475px;
+  transition: transform 0.7s cubic-bezier(.4, .2, .2, 1);
+  backface-visibility: hidden;
+}
+.flip-box-front{
+  transform: rotateY(0deg);
+  transform-style: preserve-3d;
+}
+.flip-box:hover .flip-box-front{
+  transform: rotateY(-180deg);
+  transform-style: preserve-3d;
+}
+.flip-box-back{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transform: rotateY(180deg);
+  transform-style: preserve-3d;
+}
+.flip-box:hover .flip-box-back{
+  transform: rotateY(0deg);
+  transform-style: preserve-3d;
+}
+.flip-box .inner{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  outline: 1px solid transparent;
+  perspective: inherit;
+  z-index: 2;
+  transform: translateY(-50%)translateZ(60%)scale(.94);
+  /* top: 1%; */
+  top: 5%;
+  text-align: center;
+  /* transform-style: preserve-3d; */
+}
+.flip-box-front .inner{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  outline: 1px solid transparent;
+  perspective: inherit;
+  z-index: 2;
+  transform: translateY(-50%)translateZ(60%)scale(.94);
+  top: 25%; /* Vertically center */
+  text-align: center; /* Horizontally center */
+}
+.flip-box header{
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.flip-box sub-header{
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.flip-box-img {
+  max-width: 25%;
+  display: block;
+  margin: 0 auto; /* Horizontally center */
+}
+
+.flip-box-button {
+  font-size: 15px; /* Increase font size */
+  padding: 7px 10px; /* Increase padding */
+  border-radius: 50px;
+}
+
